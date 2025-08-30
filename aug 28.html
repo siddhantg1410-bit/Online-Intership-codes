@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // Task 1: Convert Object to JSON String
+const user = {
+  name: "Siddhant",
+  role: "Frontend Developer",
+  skills: ["HTML", "CSS", "JavaScript"]
+};
+
+const jsonString = JSON.stringify(user);
+console.log("🔹 JSON String:", jsonString);
+
+// Task 2: Convert JSON String back to Object
+const parsedUser = JSON.parse(jsonString);
+console.log("🔹 Parsed Object:", parsedUser);
+
+// Task 3: Stringify and Parse an Array of Objects
+const products = [
+  { id: 1, name: "Laptop", price: 75000 },
+  { id: 2, name: "Phone", price: 30000 },
+  { id: 3, name: "Tablet", price: 20000 }
+];
+
+const productsJSON = JSON.stringify(products);
+console.log("🔹 JSON Stringified Array:", productsJSON);
+
+const parsedArray = JSON.parse(productsJSON);
+
+// Loop through and print each item
+console.log("🔹 Parsed Array Items:");
+parsedArray.forEach(item => {
+  console.log(`ID: ${item.id}, Name: ${item.name}, Price: ₹${item.price}`);
+});
+</script>
+</body>
+</html>
