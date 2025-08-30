@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+<style>
+    .form{
+        display: flex;
+        border-radius: 5px;
+        background-color: white;
+        margin: 10px;
+        position:absolute;
+        top: 75px;
+        right: 25%;
+    }
+
+    .formcontainer{
+        padding: 30px;
+    }
+    body{
+        background-color: rgb(228, 152, 53);
+        padding: 10px;
+        position: relative;
+    }
+</style>
+<body>
+    <div class="form d-flex rounded-5 bg-warning">
+        <div class="image"><img src="admission-open-2025-26-130525.jpg" alt="open" width="500px" height="500px" class="rounded-start-5"></div>
+        <div class="formcontainer bg-white rounded-end-5">
+            <h2>Admission Enquiry</h2>
+             <input type="text" placeholder="Enter your name" class="form-control" id="username" required><br>
+             <input type="number" name="phone" class="form-control" placeholder="Enter your phone number" id="phone" required><br>
+            <select name="Stream" id="stream" class="form-select" onchange="updateCourse(this.value)" required><br>
+                <option value="" disabled selected>Select stream</option>
+                <option value="Engineering">Engineering</option>
+                <option value="Polytechnic">Polytechnic</option>
+                <option value="Pharmacy">Pharmacy</option>
+             </select><br>
+             
+             <select name="Course" id="course" class="form-select" required><br>
+              <option value=""selected disabled>Select course</option>
+             </select><br>
+
+             <textarea name="message" id="message" class="form-control" placeholder="Enter a Message"></textarea> <br>
+
+             <button onclick="Datastore()" class="btn btn-info">Submit</button>
+        </div>
+    </div>
+
+
+<script>
+  function updateCourse(stream) {
+    const courseSelect = document.getElementById('course');
+    courseSelect.innerHTML = '<option value="" selected disabled>Select course</option>';
+
+    if (stream === 'Engineering') {
+      courseSelect.innerHTML +=
+        '<option value="Civil">Civil</option>' +
+        '<option value="Mechanical">Mechanical</option>' +
+        '<option value="Electrical">Electrical</option>' +
+        '<option value="Artificial Intelligence & Data Science">AI & DS</option>' +
+        '<option value="Computer">Computer</option>' +
+        '<option value="Electronics & Telecommunication">E&TC</option>';
+    }
+
+    if (stream === 'Polytechnic') {
+      courseSelect.innerHTML +=
+        '<option value="Civil">Civil</option>' +
+        '<option value="Mechanical">Mechanical</option>' +
+        '<option value="Electrical">Electrical</option>' +
+        '<option value="Artificial Intelligence & Machine Learning">AI & ML</option>' +
+        '<option value="Computer">Computer</option>' +
+        '<option value="Information Technology">IT</option>';
+    }
+
+    if (stream === 'Pharmacy') {
+      courseSelect.innerHTML +=
+        '<option value="DPharm">D.Pharm</option>' +
+        '<option value="BPharm">B.Pharm</option>';
+    }
+  }
+
+   function Datastore() {
+  localStorage.setItem("Name", document.getElementById("username").value);
+  localStorage.setItem("Phone", document.getElementById("phone").value);
+  localStorage.setItem("Stream", document.getElementById("stream").value);
+  localStorage.setItem("Course", document.getElementById("course").value);
+}
+</script>
+</body>
+</html>
