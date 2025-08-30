@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+
+<body>
+    <img src="Gateway of India.jpg" alt="slide" width="700" height="500" id="slide">
+
+    <h1 id="para"></h1>
+    
+    <button onclick="stop()" class="btn btn-warning m-3">Stop Slide</button>
+    <script>
+       setTimeout(paragraph, 1000);
+       function paragraph(){
+        document.getElementById('para').innerHTML="This is slide show";
+      }
+
+        const images = ["Gateway of India.jpg", "Marine Drive1.jpg","terminus1.jpg"]; 
+        let currentIndex = 0;
+
+        let slides = document.getElementById("slide");
+
+        myinterval = setInterval(slideshow, 1000); 
+
+
+        function slideshow() {
+            currentIndex = (currentIndex + 1) % images.length;
+            slides.src = images[currentIndex];
+        }
+
+        function stop(){
+        clearInterval(myinterval);}
+    </script>
+</body>
+
+</html>

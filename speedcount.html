@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="typingBox" placeholder="Start typing..." />
+<p id="speedDisplay">Typing speed: 0 CPS</p>
+
+<script>
+  let charCount = 0;
+
+  const inputBox = document.getElementById('typingBox');
+  const speedDisplay = document.getElementById('speedDisplay');
+
+  inputBox.addEventListener('keydown', (event) => {
+    if (event.key.length === 1) {
+      charCount++;
+    }
+  });
+
+  setInterval(() => {
+    speedDisplay.textContent = `Typing speed: ${charCount} CPS`;
+    charCount = 0; // reset every second
+  }, 1000);
+</script>
+</body>
+</html>
+

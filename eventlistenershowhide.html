@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+</style>
+<body>
+    <button  id="btn" class="btn btn-success">Click</button>
+     <p id="para">hi my self siddhant gaikwad</p>
+
+       <script>
+         document.getElementById("btn").addEventListener("click", showhide);
+
+         function showhide(){
+
+            if (document.getElementById("para").style.visibility == "hidden") {
+    document.getElementById("para").style.visibility = "visible";
+} else {
+    document.getElementById("para").style.visibility = "hidden";
+}
+         }
+
+       </script>
+
+
+</body>
+</html>

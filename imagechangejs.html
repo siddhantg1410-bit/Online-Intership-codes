@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+<body>
+    <div><img src="./gwagon.jpg" alt="gwagon" width="500px" height="300px" class="m-5" id="image"></div>
+    <button onclick="gateofindia()" onmouseover="caves()" onmouseout="terminus()">Click</button>
+    <button onclick="reset()">Reset</button>
+    <script>
+        function gateofindia(){
+            document.getElementById("image").src="Gateway of India.jpg";
+        }
+
+        function caves(){
+            document.getElementById("image").src="caves1.jpg";
+        }
+
+        function terminus(){
+            document.getElementById("image").src="terminus1.jpg";
+        }
+        
+        function reset(){
+            document.getElementById("image").src="gwagon.jpg";
+        }
+    </script>
+</body>
+</html>

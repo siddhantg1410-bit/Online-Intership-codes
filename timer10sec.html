@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+<body>
+   <p id="countdown" class="h1">10</p>
+
+   <button onclick="timer()" class="btn btn-info">Start Timer</button>
+    
+    <script>
+     function timer(){
+
+    countinterval = setInterval(countdown, 1000);
+
+     let number = 10;
+     function countdown(){
+      number--;
+     
+      if(number==0){
+         clearInterval(countinterval);
+      }
+
+   document.getElementById('countdown').textContent=number;
+     }
+ 
+     
+    }
+
+    </script>
+</body>
+</html>

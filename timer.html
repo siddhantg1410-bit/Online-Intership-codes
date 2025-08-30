@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Countdown Timer</title>
+</head>
+<body>
+  <button onclick="startCountdown()">Start Countdown</button>
+  <p id="countdown">10</p>
+
+  <script>
+    function startCountdown() {
+      let time = 10;
+      document.getElementById("countdown").textContent = time;
+
+      let timer = setInterval(function () {
+        time--;
+
+        if (time >= 0) {
+          document.getElementById("countdown").textContent = time;
+        } 
+        if (time === 0) {
+          clearInterval(timer);
+        }
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

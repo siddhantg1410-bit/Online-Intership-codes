@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Handling Demo</title>
+  <link rel="stylesheet" href="bootstrap.css">
+</head>
+<style>
+    input {
+  border: 2px solid gray;
+  padding: 8px;
+  font-size: 16px;
+  outline: none;
+}
+
+#selectedColorDisplay {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
+}
+</style>
+<body onload="showPageLoadAlert()">
+
+  <h2>Input Highlight</h2>
+  <input type="text" id="textInput" placeholder="Type something..."
+         onfocus="highlightInput()" onblur="removeHighlight()">
+
+  <h2>Select a Color</h2>
+  <select id="colorSelect" onchange="displaySelectedColor()">
+    <option value="">--Choose a color--</option>
+    <option value="Red">Red</option>
+    <option value="Blue">Blue</option>
+    <option value="Green">Green</option>
+  </select>
+
+  <p id="selectedColorDisplay"></p>
+
+  <script>
+function highlightInput() {
+  document.getElementById('textInput').style.borderColor = "blue";
+}
+
+function removeHighlight() {
+  document.getElementById('textInput').style.borderColor = "gray";
+}
+
+function showPageLoadAlert() {
+  alert("Page Loaded Successfully!");
+}
+
+function displaySelectedColor() {
+  const selected = document.getElementById('colorSelect').value;
+  const display = document.getElementById('selectedColorDisplay');
+  display.textContent = selected ? `You selected: ${selected}` : "";
+}
+  </script>
+</body>
+</html>

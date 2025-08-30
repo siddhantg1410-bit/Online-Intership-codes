@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Typing Speed Counter</title>
+</head>
+<body>
+  <textarea id="typingArea" rows="4" cols="50" placeholder="Start typing..."></textarea>
+  <p id="cps">CPS: 0</p>
+
+  <script>
+    let startTime = null;
+    let charCount = 0;
+
+    document.getElementById("typingArea").addEventListener("keypress", function () {
+      if (startTime === null) {
+        startTime = Date.now(); // start timer
+      }
+
+      charCount++;
+
+      let elapsedSeconds = (Date.now() - startTime) / 1000;
+
+      let cps = 0;
+
+      // Using for loop to "simulate" checking each character
+      for (let i = 0; i < charCount; i++) {
+        if (elapsedSeconds > 0) {
+          cps = charCount / elapsedSeconds;
+        }
+      }
+
+      if (cps >= 0) {
+        document.getElementById("cps").textContent = "CPS: " + cps.toFixed(2);
+      } else {
+        document.getElementById("cps").textContent = "CPS: 0";
+      }
+    });
+  </script>
+</body>
+</html>

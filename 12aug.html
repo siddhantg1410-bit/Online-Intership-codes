@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+
+<body>
+    <p id="paragraph" class="h2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate minima quam
+        molestias doloribus eum alias ab delectus ducimus. Officia, aperiam odio id quasi cum qui rerum porro voluptates
+        et laudantium.
+        Hic earum incidunt tenetur ad alias fugiat eius neque quia sed modi excepturi repellendus laboriosam
+        voluptatibus fuga, inventore non natus ipsam quod. At, incidunt iusto nostrum officiis vel adipisci deserunt.</p>
+
+    <button onclick="hidepara()" class="btn btn-success">Click here</button><br>
+
+    <img src="../cabbage.jpg" alt="cabbage" id="photo" width="300px" height="100px"><br>
+    <button onclick="image()" class="btn btn-warning">change</button><br><br>
+    <button onclick="button()" class="btn btn-danger" id="button">click</button>
+
+    <script>
+        function hidepara() {
+  let para = document.getElementById('paragraph');
+
+if (para.style.visibility === "hidden") {
+  para.style.visibility = "visible";
+} else {
+  para.style.visibility = "hidden";
+}
+}
+
+function image(){
+     document.getElementById('photo').src="gwagon.jpg";
+}
+
+function button(){
+    document.getElementById('button').textContent="clicked";
+}
+    </script>
+</body>
+
+</html>
